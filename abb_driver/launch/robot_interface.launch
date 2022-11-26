@@ -31,9 +31,10 @@
                      (from socket connection to robot) -->
     <node pkg="abb_driver" type="robot_state" name="robot_state">
       <param name="port" value="11002"/>
+      <remap from="robot_state" to="robot_status"/>
     </node>
 
-    <!-- <node pkg="topic_tools" type="relay" name="robot_status_relay" args="/mp/robot_status /robot_status"/>
+    <!-- <node pkg="abb_driver" type="robot_state" name="robot_status" args="/mp/robot_status /robot_status"/>
     <remap from="robot_status" to="mp/robot_status"/> -->
 
     <node pkg="topic_tools" type="relay" name="feedback_relay" args="/mp/feedback_states /feedback_states"/>
@@ -45,16 +46,13 @@
       <param name="port" value="11000"/>
     </node>
 
-    <node pkg="topic_tools" type="mux" name="robot_state_mux" args="/mp/robot_state robot_status mux:=robot_state_mux"/>
+    <!-- <node pkg="topic_tools" type="mux" name="robot_state_mux" args="/mp/robot_state robot_status mux:=robot_state_mux"/> -->
     <remap from="robot_status" to="mp/robot_state"/>
 
     <!-- the space here is very important - /mp/joint_states /joint_states -->
 
     <node pkg="topic_tools" type="relay" name="joints_relay" args="/mp/joint_states /joint_states"/>
     <remap from="joint_states" to="mp/joint_states"/>
-
-    <!-- <node pkg="topic_tools" type="mux" name="feedback_mux" args="/mp/feedback_states feedback_states mux:=feedback_mux"/> -->
-    <!-- <remap from="feedback_states" to="mp/feedback_states"/> -->
 
   </group>
 
@@ -69,9 +67,10 @@
                      (from socket connection to robot) -->
     <node pkg="abb_driver" type="robot_state" name="robot_state">
       <param name="port" value="12002"/>
+      <remap from="robot_state" to="robot_status"/>
     </node>
 
-    <!-- <node pkg="topic_tools" type="relay" name="robot_status_relay" args="/mp_m/robot_status /robot_status"/>
+    <!-- <node pkg="abb_driver" type="robot_state" name="robot_status" args="/mp_m/robot_status /robot_status"/>
     <remap from="robot_status" to="mp_m/robot_status"/> -->
 
     <node pkg="topic_tools" type="relay" name="feedback_relay" args="/mp_m/feedback_states /feedback_states"/>
@@ -82,15 +81,9 @@
     <node pkg="abb_driver" type="motion_download_interface" name="motion_download_interface">
       <param name="port" value="12000"/>
     </node>
-
-    <node pkg="topic_tools" type="mux" name="robot_state_mux" args="/mp_m/robot_state robot_status mux:=robot_state_mux"/>
-    <remap from="robot_status" to="mp_m/robot_state"/>
     
     <node pkg="topic_tools" type="relay" name="joints_relay" args="/mp_m/joint_states /joint_states"/>
     <remap from="joint_states" to="mp_m/joint_states"/>
-
-    <!-- <node pkg="topic_tools" type="mux" name="feedback_mux" args="/mp_m/feedback_states feedback_states mux:=feedback_mux"/> -->
-    <!-- <remap from="feedback_states" to="mp_m/feedback_states"/> -->
 
   </group>
   

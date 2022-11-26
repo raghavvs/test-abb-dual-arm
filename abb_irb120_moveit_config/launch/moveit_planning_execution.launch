@@ -44,10 +44,10 @@
   </group>
 
   <group unless="$(arg sim)">
-    <include file="$(find abb_irb120_moveit_config)/launch/abb_irb120_3_58_moveit_controller_manager.launch" ns="mp" >
+    <include file="$(find abb_irb120_moveit_config)/launch/abb_irb120_3_58_moveit_controller_manager.launch">
     </include>
-    <include file="$(find abb_irb120_moveit_config)/launch/abb_irb120_3_58_moveit_controller_manager_m.launch" ns="mp_m" >
-    </include>
+    <!-- <include file="$(find abb_irb120_moveit_config)/launch/abb_irb120_3_58_moveit_controller_manager_m.launch" ns="mp_m" >
+    </include> -->
   </group>
 
   <!-- publish the robot state (tf transforms) -->

@@ -11,8 +11,8 @@
 
   <!-- <rosparam file="$(find abb_irb120_moveit_config)/config/controllers.yaml"/>  -->
 
-  <rosparam file="$(find abb_irb120_moveit_config)/config/controllers.yaml"/> 
+  <!-- <rosparam file="$(find abb_irb120_moveit_config)/config/controllers.yaml"/>  -->
 
-  <!-- <rosparam file="$(find abb_irb120_moveit_config)/config/controllers_m.yaml"/>  -->
+  <rosparam file="$(find abb_irb120_moveit_config)/config/controllers_m.yaml"/> 
 
 </launch>

@@ -10,6 +10,8 @@
 
   <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120_3_58.yaml" />
 
+  <!-- <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120_3_58_mp_m.yaml" ns="mp_m" /> -->
+
   <!-- the "sim" argument controls whether we connect to a Simulated or Real robot -->
   <!--  - if sim=false, a robot_ip argument is required -->
   <arg name="sim" default="true" />
@@ -55,7 +57,7 @@
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
 
-   <include file="$(find abb_irb120_moveit_config)/launch/move_group.launch" ns="mp_m">
+  <include file="$(find abb_irb120_moveit_config)/launch/move_group.launch" ns="mp_m">
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
 

@@ -13,7 +13,7 @@
 
   <!-- <arg name="controller" default="fs100"/> -->
 
-  <!-- <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120_3_58.yaml" /> -->
+  <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120_3_58.yaml" />
 
   <rosparam command="load" file="$(find abb_irb120_support)/config/abb_irb120_3_58_motion_interface.yaml" />
 

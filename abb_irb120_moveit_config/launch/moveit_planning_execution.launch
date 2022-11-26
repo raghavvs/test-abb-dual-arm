@@ -57,7 +57,7 @@
     <arg name="config" value="true"/>
   </include>
 
-  <include file="$(find abb_irb120_support)/launch/robot_enable.launch" />
+  <!-- <include file="$(find abb_irb120_support)/launch/robot_enable.launch" /> -->
 
   <!-- If database loading was enabled, start mongodb as well -->
   <include file="$(find abb_irb120_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">

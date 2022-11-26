@@ -29,9 +29,9 @@
     
     <!-- robot_state: publishes joint positions and robot-state data
                      (from socket connection to robot) -->
+    <remap from="robot_status" to="robot_state"/>
     <node pkg="abb_driver" type="robot_state" name="robot_state">
       <param name="port" value="11002"/>
-      <remap from="robot_state" to="robot_status"/>
     </node>
 
     <!-- <node pkg="abb_driver" type="robot_state" name="robot_status" args="/mp/robot_status /robot_status"/>
@@ -65,9 +65,9 @@
     
     <!-- robot_state: publishes joint positions and robot-state data
                      (from socket connection to robot) -->
+    <remap from="robot_status" to="robot_state"/>
     <node pkg="abb_driver" type="robot_state" name="robot_state">
       <param name="port" value="12002"/>
-      <remap from="robot_state" to="robot_status"/>
     </node>
 
     <!-- <node pkg="abb_driver" type="robot_state" name="robot_status" args="/mp_m/robot_status /robot_status"/>

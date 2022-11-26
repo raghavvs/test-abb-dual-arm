@@ -4,7 +4,7 @@
 controller_manager_ns: controller_manager
 controller_list:
   - name: ""
-    action_ns: joint_trajectory_action
+    action_ns: mp_m/joint_trajectory_action
     type: FollowJointTrajectory
     default: true
     joints:

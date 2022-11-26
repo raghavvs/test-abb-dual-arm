@@ -49,7 +49,11 @@
   <!-- publish the robot state (tf transforms) -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-  <include file="$(find abb_irb120_moveit_config)/launch/move_group.launch">
+  <include file="$(find abb_irb120_moveit_config)/launch/move_group.launch" ns="mp">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+   <include file="$(find abb_irb120_moveit_config)/launch/move_group.launch" ns="mp_m">
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
 
